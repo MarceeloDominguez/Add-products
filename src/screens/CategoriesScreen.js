@@ -37,7 +37,7 @@ export default function CategoriesScreen() {
 }
 
 function RenderItem({ data, navigation }) {
-  const { categoryName } = data.item;
+  const { categoryName , img} = data.item;
 
   return (
     <Card style={styles.card}>
@@ -48,7 +48,7 @@ function RenderItem({ data, navigation }) {
         >
           <View>
             <Image
-              source={require("../img/avatar-default.jpg")}
+              source={{uri: img}}
               style={styles.image}
             />
             <Title style={{ fontSize: 12, textAlign: "center" }}>
@@ -66,16 +66,16 @@ const styles = StyleSheet.create({
     width: cardWidth,
     marginHorizontal: 10,
     marginVertical: 10,
-    borderRadius: 30,
+    borderRadius: 24,
   },
   image: {
-    width: 50,
-    height: 50,
+    width: 90,
+    height: 100,
     borderRadius: 10,
     alignSelf: "center",
   },
   imageContainer: {
-    borderRadius: 30,
+    borderRadius: 24,
     shadowColor: "#000",
     backgroundColor: "#fff",
     shadowOffset: {
@@ -84,7 +84,7 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.23,
     shadowRadius: 2.62,
-    elevation: 10,
+    elevation: 4,
   },
   containerTextInput: {
     marginHorizontal: 10,
